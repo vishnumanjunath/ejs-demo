@@ -1,12 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">EJS Is Fun</a>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/about">About</a>
-      </li>
-    </ul>
-</nav>
-<em>Variant: <%= typeof variant !== 'undefined' ? variant : 'default' %></em>
+<ul class="navbar">
+  <li>
+    <a class="<%= activeLocation === 'home' ? 'active' : '' %>" href="/">Home</a>
+  </li>
+  <li>
+    <a class="<%= activeLocation === 'about' ? 'active' : '' %>" href="/about">About</a>
+  </li>
+</ul>
+<style>
+  .navbar {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  .navbar li {
+    list-style: none;
+    padding: 2px;
+  }
+  .navbar li a {
+    font-size: 18px;
+    list-style: none;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 500;
+    color: #000;
+  }
+
+  .navbar li a:hover {
+    background-color: #eee;
+    border-radius: 6px;
+  }
+
+  .active {
+    background-color: #eee;
+    border-radius: 6px;
+  }
+</style>

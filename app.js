@@ -8,16 +8,17 @@ app.set('view engine', 'ejs');
 
 // index page
 app.get('/', function(req, res) {
-    var mascots = [
-      { id: '121', name: 'Sammy', organization: "DigitalOcean", birth_year: 2012},
-      { id: '122', name: 'Tux', organization: "Linux", birth_year: 1996},
-      { id: '123', name: 'Moby Dock', organization: "Docker", birth_year: 2013}
+    const features = [
+      { id: '121', name: 'Use plain JavaScript', description: 'We love JavaScript. Its a totally friendly language. All templating languages grow to be Turing-complete. Just cut out the middle-man, and use JS!' },
+      { id: '122', name: 'Fast development time', description: 'Dont waste time and attention figuring out arcane new syntax because elegance — or how to preprocess your data so it will actually render right.' },
+      { id: '123', name: 'Simple syntax', description: 'JavaScript code in simple, straightforward scriptlet tags. Just write JavaScript that emits the HTML you want, and get the job done!' },
+      { id: '124', name: 'Speedy execution', description: 'We all know how fast V8 and the other JavaScript runtimes have gotten. EJS caches the intermediate JS functions for fast execution.' },
+      { id: '125', name: 'Easy debugging', description: 'Its easy to debug EJS errors: your errors are plain JavaScript exceptions, with template line-numbers included.' },
+      { id: '126', name: 'Active development', description: 'EJS has a large community of active users, and the library is under active development. Were happy to answer your questions or give you help.' },
     ];
-    var tagline = "No programming concept is complete without a cute animal mascot.";
   
     res.render('pages/index', {
-      mascots: mascots,
-      tagline: tagline
+      features: features,
     });
 });
 

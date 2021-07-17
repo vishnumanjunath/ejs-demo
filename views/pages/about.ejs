@@ -6,29 +6,12 @@
 <body class="container">
 
 <header>
-  <%- include('../partials/header'); %>
+  <%- include('../partials/header', {activeLocation: 'about'}); %>
 </header>
 
 <main>
-<div class="row">
-  <div class="col-sm-8">
-    <div class="jumbotron">
-      <h1>This is great</h1>
-      <p>Welcome to templating using EJS</p>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="well">
-      <h3>Look I'm A Sidebar!</h3>
-    </div>
-  </div>
-</div>
+  <h1>About Page</h1>
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate in quisquam suscipit sunt sed optio sint consequatur perferendis temporibus aliquid, ea unde sequi recusandae voluptatum quod eum error ad fugiat.</p>
 </main>
-
-<footer>
-  <%- include('../partials/footer'); %>
-</footer>
-
 </body>
 </html>

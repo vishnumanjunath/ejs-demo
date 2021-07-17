@@ -1,7 +1,6 @@
-<div class="team-modal" id="<%= mascot.id %>">
+<div class="team-modal" id="<%= feature.id %>">
     <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="close-button" onclick="showModal(event, '<%=JSON.stringify(mascot)%>')">×</span>
-        <h1>Hello, <%= mascot.name %>!</h1>
-        <p>Representing<%= mascot.organiztion %>, born in <%= mascot.birth_year %></p>
+        <h1><%= feature.name %>!</h1>
+        <p><%= feature.description %></p>
     </div>
 </div>
