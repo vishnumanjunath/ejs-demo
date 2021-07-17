@@ -76,7 +76,7 @@
           <div class="card" onclick="toggleModal(event, '<%=JSON.stringify(feature)%>')">
             <h2><%= feature.name %></h2>
             <p><%= feature.description %></p>
-            <%- include('../partials/team-modal', {feature: feature}); %>
+            <%- include('../partials/modal', {feature: feature}); %>
           </div>
         <% }); %>
       </div>
