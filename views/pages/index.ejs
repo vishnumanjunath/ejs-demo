@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+  <style>
+    .display-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+    .team-modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.1);
+        transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    }
+    .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 1rem 1.5rem;
+        width: 24rem;
+        border-radius: 0.5rem;
+    }
+    .close-button {
+        float: right;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        background-color: lightgray;
+    }
+    .close-button:hover {
+        background-color: darkgray;
+    }
+    .show-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1.0);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    }
+    ul li{
+        list-style: none;
+        border: 1px solid #000;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header', {variant: 'compact'}); %>
+</header>
+
+<main>
+  <div class="jumbotron">
+    <h1>This is great</h1>
+    <p>Welcome to templating using EJS</p>
+    <h2>Variable</h2>
+    <%= tagline %>
+
+    <h3>Team</h3>
+
+    <ul>
+        <% mascots.forEach(function(mascot) {%>
+            <li class="trigger" onclick="showModal(event, '<%=JSON.stringify(mascot)%>')">
+                <strong><%= mascot.name %></strong> representing<%= mascot.organiztion %>, born in <%= mascot.birth_year %>
+                <%- include('../partials/team-modal', {mascot: mascot});%>
+            </li>
+        <% }); %>
+    </ul>
+
+  </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer');%>
+</footer>
+
+<script>
+function showModal(event,mascot) {
+  const employee = JSON.parse(mascot);
+  const modalElement = document.getElementById(employee.id);
+  if (modalElement) {
+    modalElement.classList.toggle("show-modal");
+  }
+}
+</script>
+</body>
+</html>
