@@ -1,5 +1,6 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
+const ejs = require('ejs');
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -22,9 +23,18 @@ app.get('/', function(req, res) {
     });
 });
 
-// about page
+// about page => SSR Support
 app.get('/about', function(req, res) {
   res.render('pages/about');
+
+  // ejs.renderFile('views/pages/about.ejs', {}, 
+  //       {}, function (err, template) {
+  //       if (err) {
+  //           throw err;
+  //       } else {
+  //           res.end(template);
+  //       }
+  //   });
 });
 
 app.listen(8080);
