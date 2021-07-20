@@ -25,16 +25,16 @@ app.get('/', function(req, res) {
 
 // about page => SSR Support
 app.get('/about', function(req, res) {
-  res.render('pages/about');
+  // res.render('pages/about');
 
-  // ejs.renderFile('views/pages/about.ejs', {}, 
-  //       {}, function (err, template) {
-  //       if (err) {
-  //           throw err;
-  //       } else {
-  //           res.end(template);
-  //       }
-  //   });
+  ejs.renderFile('views/pages/about.ejs', {}, 
+        {}, function (err, template) {
+        if (err) {
+            throw err;
+        } else {
+            res.end(template);
+        }
+    });
 });
 
 app.listen(8080);
