@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+  <style>
+    .team {
+      padding-bottom: 1rem;
+    }
+    .team-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .team-member-card {
+      width: 14%;
+      margin-right: 3%;
+      border-radius: 6px !important;
+      padding: 0;
+      position: relative;
+      cursor: pointer;
+    }
+    .team-member-img {
+      position: relative;
+      overflow: hidden;
+    }
+    .mb-2 {
+      margin-bottom: 2rem;
+    }
+    .mt-0 {
+      margin-top: 0px !important;
+    }
+  </style>
+</head>
+<body class="container">
+
+  <header>
+    <%- include('../partials/header', {activeLocation: 'teams'}); %>
+  </header>
+
+  <main class="teams-main-content">
+    <div class="h2-container"><h2 class="h2-style">Teams</h2></div>
+    <div class="features-content">
+      <% teams.forEach(team => { %>
+        <div class="team">
+          <h2 class="h2-style mb-2"><%= team.name %></h2>
+          <div class="team-content">
+            <% team.members.forEach(function(member) {%>
+              <div class="team-member-card" onclick="toggleModal(event, '<%=JSON.stringify(member)%>')">
+                <div class="team-member-img">
+                  <img src="https://picsum.photos/200" alt="Random Pic">
+                </div>
+                <h4 class="mt-0"><%= member.name %></h4>
+                <%- include('../partials/modal', {member: member}); %>
+              </div>
+            <% }); %>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+      
+      <!-- Section header -->
+      <!-- List of memebers -->
+    </div>
+  </main>
+
+  <footer>
+    <%- include('../partials/footer'); %>
+  </footer>
+
+  <script>
+    // Toggle Modal
+    function toggleModal(event, member) {
+      const parsedMember = JSON.parse(member);
+      // Get Modal Element By Id
+      const modalElement = document.getElementById(parsedMember.id);
+      // if modalElement is present, show the pop up
+      if (modalElement) {
+        modalElement.classList.toggle("show-modal");
+      }
+    }
+  </script>
+</body>
+</html>

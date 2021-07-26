@@ -1,8 +1,20 @@
-<ul class="navbar">
-  <li>
-    <a class="<%= activeLocation === 'home' ? 'active' : '' %>" href="/">Home</a>
-  </li>
-  <li>
-    <a class="<%= activeLocation === 'about' ? 'active' : '' %>" href="/about">About</a>
-  </li>
-</ul>
+<header class="header">
+  <div class="header-logo">
+    <h2>
+      <a href="/">Embeded JavaScript</a>
+    </h2>
+  </div>
+  <nav>
+    <ul class="navbar">
+      <li class="nav-item <%= activeLocation === 'home' ? 'menu-active' : '' %>">
+        <a href="/">Home</a>
+      </li>
+      <li class="nav-item <%= activeLocation === 'products' ? 'menu-active' : '' %>">
+        <a href="/products">Products</a>
+      </li>
+      <li class="nav-item <%= activeLocation === 'teams' ? 'menu-active' : '' %>">
+        <a href="/teams">Team</a>
+      </li>
+    </ul>
+  </nav> 
+</header>

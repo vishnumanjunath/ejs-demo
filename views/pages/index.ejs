@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 <head>
   <%- include('../partials/head'); %>
 </head>
 <body class="container">
 
-  <header>
-    <%- include('../partials/header', {activeLocation: 'home'}); %>
-  </header>
+    <header>
+        <%- include('../partials/header', {activeLocation: 'home'}); %>
+    </header>
 
-  <main>
-    <div class="jumbotron">
-      <div class="content">
-        <% features.forEach(function(feature) {%>
-          <div class="card" onclick="toggleModal(event, '<%=JSON.stringify(feature)%>')">
-            <h2><%= feature.name %></h2>
-            <p><%= feature.description %></p>
-            <%- include('../partials/modal', {feature: feature}); %>
-          </div>
-        <% }); %>
-      </div>
+    <div class="main-content">
+        <div class="main-left-content">
+            <h1>Making decisions in your code — conditionals</h1>
+            <p>In any programming language, the code needs to make decisions and carry out actions accordingly depending on different inputs.</p>
+            <div>
+                <div class="c_get_started_button">
+                    Get Started
+                </div>
+            </div>
+        </div>
+        <!-- <div class="main-right-content">
+            main-content
+        </div> -->
     </div>
-  </main>
 
-  <script>
-    // Toggle Modal
-    function toggleModal(event, feature) {
-      const parsedFeature = JSON.parse(feature);
-      // Get Modal Element By Id
-      const modalElement = document.getElementById(parsedFeature.id);
-      // if modalElement is present, show the pop up
-      if (modalElement) {
-        modalElement.classList.toggle("show-modal");
-      }
-    }
-  </script>
+    <div class="features">
+        <div class="h2-container"><h2 class="h2-style">Popular collections</h2></div>
+        <div class="features-content">
+            <div class="features-list">
+                <div class="features-list-item">
+                    <img src="../assets/svgs/1SCENE.svg" alt="" srcset="">
+                    <h2>Education & Online Courses</h2>
+                    <h4 class="text-orange">Scalable Vector Graphics</h4>
+                    <p>There is one final bit of syntax we want to introduce you to before we get you to play with some examples. The ternary or conditional operator is a small bit of syntax that tests a condition and returns one value/expression if it is true</p>
+                    <p class="text-gray">Now you can control with CSS</p>
+                </div>
+                <div class="features-list-item">
+                    <img src="../assets/svgs/2 SCENE.svg" alt="" srcset="">
+                    <h2>Education & Online Courses</h2>
+                    <h4 class="text-orange">Scalable Vector Graphics</h4>
+                    <p>There is one final bit of syntax we want to introduce you to before we get you to play with some examples. The ternary or conditional operator is a small bit of syntax that tests a condition and returns one value/expression if it is true</p>
+                    <p class="text-gray">Now you can control with CSS</p>
+                </div>
+                <div class="features-list-item">
+                    <img src="../assets/svgs/3 SCENE.svg" alt="" srcset="">
+                    <h2>Education & Online Courses</h2>
+                    <h4 class="text-orange">Scalable Vector Graphics</h4>
+                    <p>There is one final bit of syntax we want to introduce you to before we get you to play with some examples. The ternary or conditional operator is a small bit of syntax that tests a condition and returns one value/expression if it is true</p>
+                    <p class="text-gray">Now you can control with CSS</p>
+                </div>
+                <div class="features-list-item">
+                    <img src="../assets/svgs/4 SCENE.svg" alt="" srcset="">
+                    <h2>Education & Online Courses</h2>
+                    <h4 class="text-orange">Scalable Vector Graphics</h4>
+                    <p>There is one final bit of syntax we want to introduce you to before we get you to play with some examples. The ternary or conditional operator is a small bit of syntax that tests a condition and returns one value/expression if it is true</p>
+                    <p class="text-gray">Now you can control with CSS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
 </body>
 </html>
