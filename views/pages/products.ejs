@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include('../partials/head'); %>
+  <%- include('../partials/head', pageTitle); %>
 </head>
 <body class="container">
 
 <header>
-  <%- include('../partials/header', {activeLocation: 'about'}); %>
+  <%- include('../partials/header', path); %>
 </header>
 
   <main>
     <% let selectedSection = 'first'%>
     <div class="features">
-      <!-- <div class="main-right-content">
-          main-content
-      </div> -->
       <% if (selectedSection === 'first') { %>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate in quisquam suscipit sunt sed optio sint consequatur perferendis temporibus aliquid, ea unde sequi recusandae voluptatum quod eum error ad fugiat.</p>
       <% } if (selectedSection === 'second') { %>

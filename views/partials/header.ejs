@@ -6,13 +6,13 @@
   </div>
   <nav>
     <ul class="navbar">
-      <li class="nav-item <%= activeLocation === 'home' ? 'menu-active' : '' %>">
+      <li class="nav-item <%= path === '/' ? 'menu-active' : '' %>">
         <a href="/">Home</a>
       </li>
-      <li class="nav-item <%= activeLocation === 'products' ? 'menu-active' : '' %>">
+      <li class="nav-item <%= path === '/products' ? 'menu-active' : '' %>">
         <a href="/products">Products</a>
       </li>
-      <li class="nav-item <%= activeLocation === 'teams' ? 'menu-active' : '' %>">
+      <li class="nav-item <%= path === '/teams' ? 'menu-active' : '' %>">
         <a href="/teams">Team</a>
       </li>
     </ul>

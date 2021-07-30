@@ -1,39 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include('../partials/head'); %>
-  <style>
-    .team {
-      padding-bottom: 1rem;
-    }
-    .team-content {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .team-member-card {
-      width: 14%;
-      margin-right: 3%;
-      border-radius: 6px !important;
-      padding: 0;
-      position: relative;
-      cursor: pointer;
-    }
-    .team-member-img {
-      position: relative;
-      overflow: hidden;
-    }
-    .mb-2 {
-      margin-bottom: 2rem;
-    }
-    .mt-0 {
-      margin-top: 0px !important;
-    }
-  </style>
+  <%- include('../partials/head', pageTitle); %>
+  <link rel="stylesheet" href="/assets/css/teams.css">
 </head>
 <body class="container">
 
   <header>
-    <%- include('../partials/header', {activeLocation: 'teams'}); %>
+    <%- include('../partials/header', path); %>
   </header>
 
   <main class="teams-main-content">

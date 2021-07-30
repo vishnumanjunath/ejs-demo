@@ -1,0 +1,25 @@
+.team {
+    padding-bottom: 1rem;
+  }
+  .team-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .team-member-card {
+    width: 14%;
+    margin-right: 3%;
+    border-radius: 6px !important;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+  }
+  .team-member-img {
+    position: relative;
+    overflow: hidden;
+  }
+  .mb-2 {
+    margin-bottom: 2rem;
+  }
+  .mt-0 {
+    margin-top: 0px !important;
+  }
